@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import weatherapi from './api/weatherApi'
 import News from './Componenets/News';
-
+import WeatherDetails from './Componenets/WeatherDetails'
 const App = () => {
     const [city, setcity] = useState();
     const [weather, setweather] = useState([]);
@@ -79,6 +79,7 @@ const App = () => {
             :null
         }
         <News/>
+        <WeatherDetails/>
 	</>
 	);
 }
