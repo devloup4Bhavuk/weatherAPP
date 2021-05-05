@@ -1,14 +1,47 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import weatherapi from './api/weatherApi'
+import News from './Componenets/News';
+
 const App = () => {
     const [city, setcity] = useState();
     const [weather, setweather] = useState([]);
+    const[news,setNews] = useState([])
+    const[count,setCount] = useState(1)
+    
+    
+    const newsData = async (e)=>{
+       
+        var url = 'https://api.publicapis.org/entries';
+        //  var url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${newsApi}`;
+        const data = await fetch(url)
+            .then((response) => response.json())
+            .then( data=> data);
+
+         setNews({
+             data:data
+         });
+        
+    }
+
+    useEffect( ()=> {
+        
+        newsData();
+
+       
+      },[count]);
+
+
+
+
+
+
     const input = (e)=>{
         let name =e.target.name;
         if(name === "city"){
             setcity(e.target.value);
         }
     }
+
     const weatherData = async (e)=>{
         e.preventDefault();
         if(city === ' '){
@@ -40,6 +73,12 @@ const App = () => {
             <p>{weather.data.main.temp}</p>
             :null
         }
+        {
+            news.data !== undefined ?
+            console.log(news.data.count)
+            :null
+        }
+        <News/>
 	</>
 	);
 }
