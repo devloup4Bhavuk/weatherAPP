@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import weatherapi from './api/weatherApi'
 const App = () => {
     const [city, setcity] = useState();
-    const [weather, setweather] = useState();
+    const [weather, setweather] = useState([]);
     const input = (e)=>{
         let name =e.target.name;
         if(name === "city"){
@@ -20,21 +20,11 @@ const App = () => {
                             .then((response) => response.json())
                             .then( data=> data);
 
-                setweather(data);
+                setweather({
+                    data:data
+                });
         }
     }
-    // const  fetchApi = async (e)=>{
-    //     var url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherapi}`
-    //     await fetch(url)
-    //     .then((response) => response.json())
-    //     .then( data=>{
-    //         console.log(data)
-    //         setcity(prevState => [...prevState,{
-    //             name:data.main.name
-    //         }])
-    //     })
-    //     .catch((err)=> console.log(err))
-    // }
 	return (
 	<>
         <form>
@@ -45,7 +35,11 @@ const App = () => {
             />
             <button onClick={weatherData} >Submit</button>
         </form>
-        {city}
+        {
+            weather.data !== undefined ?
+            <p>{weather.data.main.temp}</p>
+            :null
+        }
 	</>
 	);
 }
