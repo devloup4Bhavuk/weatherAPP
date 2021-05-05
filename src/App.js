@@ -4,6 +4,7 @@ import News from './Componenets/News';
 import NewsCard from './Componenets/NewsCard.js';
 import "./index.css";
 
+import WeatherDetails from './Componenets/WeatherDetails'
 const App = () => {
     const [city, setcity] = useState();
     const [weather, setweather] = useState([]);
@@ -82,6 +83,7 @@ const App = () => {
         }
         <News/>
         <NewsCard/>
+        <WeatherDetails/>
 	</>
 	);
 }
