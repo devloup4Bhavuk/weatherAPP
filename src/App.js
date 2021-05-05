@@ -1,6 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import weatherapi from './api/weatherApi'
 import News from './Componenets/News';
+import NewsCard from './Componenets/NewsCard.js';
+import "./index.css";
 
 const App = () => {
     const [city, setcity] = useState();
@@ -79,6 +81,7 @@ const App = () => {
             :null
         }
         <News/>
+        <NewsCard/>
 	</>
 	);
 }
