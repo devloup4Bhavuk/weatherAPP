@@ -1,9 +1,11 @@
 import React from 'react'
 
-export const NewsHead = (props) => {
+const NewsHead = (props) => {
     return (
         <div>
-            <p>{props.head}</p>
+            <p>{props.title}</p>
         </div>
     )
 }
+
+export default NewsHead

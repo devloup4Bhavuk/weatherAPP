@@ -1,17 +1,13 @@
 import React,{useState,useEffect} from 'react'
-import weatherapi from './api/weatherApi'
-
-
+import Weather from './Componenets/Weather'
+import newsApi from './api/newsApi'
+import NewsBox from './Componenets/NewsBox'
 const App = () => {
-    const [city, setcity] = useState();
-    const [weather, setweather] = useState([]);
     const[news,setNews] = useState([])
-    
     
     const newsData = async (e)=>{
        
-        var url = 'https://api.publicapis.org/entries';
-        //  var url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${newsApi}`;
+        var url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${newsApi}`;
         const data = await fetch(url)
             .then((response) => response.json())
             .then( data=> data);
@@ -22,60 +18,29 @@ const App = () => {
         
     }
 
-    useEffect( ()=> {
-        
+    useEffect( ()=> { 
         newsData();
-
-       
-      },[]);
+    },[]);
 
 
 
 
 
 
-    const input = (e)=>{
-        let name =e.target.name;
-        if(name === "city"){
-            setcity(e.target.value);
-        }
-    }
-
-    const weatherData = async (e)=>{
-        e.preventDefault();
-        if(city === ' '){
-            alert('fill city name first');
-        }
-        else{
-                var url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherapi}`
-                const data = await fetch(url)
-                            .then((response) => response.json())
-                            .then( data=> data);
-
-                setweather({
-                    data:data
-                });
-        }
-    }
+    
 	return (
 	<>
-        <form>
-            <input 
-            type="text"
-             onChange={input}
-             name="city" 
-            />
-            <button onClick={weatherData} >Submit</button>
-        </form>
+        <Weather />
+        
         {
-            weather.data !== undefined ?
-            <p>{weather.data.main.temp}</p>
+            news.data !== undefined ?
+            console.log(news.data.articles)
             :null
         }
         {
             news.data !== undefined ?
-            console.log(news.data.count)
-            :null
+            <NewsBox news={news.data.articles} />
+            :null 
         }
 	</>
 	);
