@@ -1,16 +1,11 @@
 import React,{useState,useEffect} from 'react'
 import weatherapi from './api/weatherApi'
-import News from './Componenets/News';
-import Weatherdetail2 from './Componenets/Weatherdetail2';
-import NewsCard from './Componenets/NewsCard.js';
-import "./index.css";
 
-import WeatherDetails from './Componenets/WeatherDetails'
+
 const App = () => {
     const [city, setcity] = useState();
     const [weather, setweather] = useState([]);
     const[news,setNews] = useState([])
-    const[count,setCount] = useState(1)
     
     
     const newsData = async (e)=>{
@@ -32,7 +27,7 @@ const App = () => {
         newsData();
 
        
-      },[count]);
+      },[]);
 
 
 
@@ -82,10 +77,6 @@ const App = () => {
             console.log(news.data.count)
             :null
         }
-        <News/>
-        <Weatherdetail2 />
-        <NewsCard/>
-        <WeatherDetails/>
 	</>
 	);
 }
