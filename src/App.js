@@ -4,15 +4,14 @@ import newsApi from './api/newsApi'
 import NewsBox from './Componenets/NewsBox'
 const App = () => {
     const[news,setNews] = useState([])
-    
+
     const newsData = async (e)=>{
-       
         var url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${newsApi}`;
         const data = await fetch(url)
-            .then((response) => response.json())
-            .then( data=> data);
+            .then((promise) => promise.json())
+            .then( (response) => response);
 
-         setNews({
+         setNews( {
              data:data
          });
         
@@ -21,11 +20,6 @@ const App = () => {
     useEffect( ()=> { 
         newsData();
     },[]);
-
-
-
-
-
 
     
 	return (
@@ -39,7 +33,7 @@ const App = () => {
         }
         {
             news.data !== undefined ?
-            <NewsBox news={news.data.articles} />
+            <NewsBox news={news.data.articles}/>
             :null 
         }
 	</>

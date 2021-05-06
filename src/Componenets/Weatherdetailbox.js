@@ -1,6 +1,6 @@
 import React from "react";
 
-function Weatherdetail2(){
+function Weatherdetailbox(props){
     return (
         <div>
         <table> 
@@ -9,7 +9,7 @@ function Weatherdetail2(){
                 <td><p>Pressure</p></td>
             </tr>
             <tr >
-                <td >100</td>
+                <td >{props.pressure}</td>
                 <td >100</td>
             </tr>
             <tr style={{padding:"5px"}} >
@@ -25,4 +25,4 @@ function Weatherdetail2(){
         </div>
     )
 }
-export default Weatherdetail2;
+export default Weatherdetailbox;

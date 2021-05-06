@@ -1,12 +1,13 @@
 import React,{useState} from 'react'
 import weatherapi from '../api/weatherApi'
+import Weatherdetailbox from './Weatherdetailbox'
 
 const Weather = ()=> {
     const [city, setcity] = useState();
     const [weather, setweather] = useState([]);
 
     const input = (e)=>{
-        let name =e.target.name;
+        let name = e.target.name;
         if(name === "city"){
             setcity(e.target.value);
         }
@@ -42,6 +43,11 @@ const Weather = ()=> {
             {
                 weather.data !== undefined ?
                 <p>{weather.data.main.temp}</p>
+                :null
+            }
+            {
+                weather.data !== undefined ?
+                <Weatherdetailbox pressure={weather.data.main.pressure} />
                 :null
             }
         </>
