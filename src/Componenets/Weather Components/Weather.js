@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import weatherapi from '../../api/weatherApi'
 import Weatherdetailbox from './Weatherdetailbox'
 import WeatherDetails from './WeatherDetails';
+import '../../Css/index.css'
 
 const Weather = ()=> {
     const [city, setcity] = useState();
@@ -32,14 +33,15 @@ const Weather = ()=> {
     }
 
     return (
-        <>
-            <form>
+        <div class="col-md-6">
+            <form onSubmit={weatherData}>
                 <input 
                 type="text"
                 onChange={input}
-                name="city" 
+                name="city" class="form-control" placeholder="Type Your City Name"
+                className="inp1"
                 />
-                <button onClick={weatherData} >Submit</button>
+                {/* <button onClick={weatherData} >Submit</button> */}
             </form>
             {
                 
@@ -68,7 +70,7 @@ const Weather = ()=> {
                 :null
             }
             
-        </>
+        </div>
     )
 }
 

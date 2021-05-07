@@ -1,10 +1,11 @@
 import React from 'react'
 import NewsHead from './NewsHead' 
+
 function NewsBox(props) {
     return (
         <>
-            <div>
-              <h1>Top stories</h1>
+            <div className="newsbox">
+              <h1 class="newshead1">Top stories</h1>
               <hr></hr>
               {props.news.map((newsItem)=>{
                   return <NewsHead title={newsItem.title} />
@@ -13,5 +14,4 @@ function NewsBox(props) {
         </>
     )
 }
-
 export default NewsBox

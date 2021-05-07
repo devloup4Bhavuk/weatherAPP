@@ -1,6 +1,7 @@
 import React ,{useState,useEffect}from 'react'
 import newsApi from '../../api/newsApi'
 import NewsBox from './NewsBox'
+import '../../Css/index.css'
 const  News = () => {
 
     const[news,setNews] = useState([])
@@ -23,13 +24,13 @@ const  News = () => {
 
     
 	return (
-	<>
+	<div className="news" class="col-md-6">
         {
             news.data !== undefined ?
             <NewsBox news={news.data.articles}/>
             :null 
         }
-	</>
+	</div>
 	);
 }
 export default News;
