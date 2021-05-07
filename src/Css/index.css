@@ -78,6 +78,7 @@ tr,td{
     background-color: white;
     border-radius: 20px;
     padding-inline: 20px;
+    width: 100%;
 }
 .k{
     padding-left: 20px;

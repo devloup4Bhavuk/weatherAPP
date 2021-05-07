@@ -38,7 +38,7 @@ const Weather = ()=> {
                 <input 
                 type="text"
                 onChange={input}
-                name="city" class="form-control" placeholder="Type Your City Name"
+                name="city" class="form-control" autoComplete="off" placeholder="Type Your City Name"
                 className="inp1"
                 />
                 {/* <button onClick={weatherData} >Submit</button> */}
