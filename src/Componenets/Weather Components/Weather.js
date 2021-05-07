@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import weatherapi from '../api/weatherApi'
+import weatherapi from '../../api/weatherApi'
 import Weatherdetailbox from './Weatherdetailbox'
 import WeatherDetails from './WeatherDetails';
 

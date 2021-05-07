@@ -1,6 +1,6 @@
 import React from 'react'
-import Weather from './Componenets/Weather'
-import News from './Componenets/News';
+import Weather from './Componenets/Weather Components/Weather'
+import News from './Componenets/News Components/News';
 
 
 

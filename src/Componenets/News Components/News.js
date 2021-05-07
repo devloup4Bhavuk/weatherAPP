@@ -1,7 +1,6 @@
 import React ,{useState,useEffect}from 'react'
-import newsApi from '../api/newsApi'
+import newsApi from '../../api/newsApi'
 import NewsBox from './NewsBox'
-
 const  News = () => {
 
     const[news,setNews] = useState([])
