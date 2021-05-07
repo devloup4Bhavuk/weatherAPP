@@ -20,7 +20,7 @@ const  News = () => {
 
     useEffect( ()=> { 
         newsData();
-    },[]);
+    },[20]);
 
     
 	return (

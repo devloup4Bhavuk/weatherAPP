@@ -20,27 +20,25 @@ input[type="text"]:focus{
     text-align: center;
 }
 .head1{
-    font-family: Roboto;
     font-style: normal;
     font-size: 70px;
     color: #FFFFFF;
-    padding-left: 40px;
+    padding-left: 80px;
 }
 .head2{
     font-size: 30px;
     margin-top: 8px;
-    font-family: Roboto;
-    padding-left: 40px;
+    padding-left: 90px;
     color: #E5E5E5;
 }
 .head3{
     text-align: center;
     color: #FFFFFF;
     padding-left: 80px;
-    margin-top: 60px;
+    margin-top: 40px;
     position: relative;
     top: 20px;
-    font-size: 30px;
+    font-size: 40px;
 }
 .head4{
     color: white;
@@ -79,6 +77,13 @@ tr,td{
     border-radius: 20px;
     padding-inline: 20px;
     width: 100%;
+    margin-top: 100px;
+    height: 500px;
+    overflow: scroll; 
+    width: 80%;
+}
+.newsbox::-webkit-scrollbar {
+    display: none;
 }
 .k{
     padding-left: 20px;
@@ -97,4 +102,11 @@ hr{
 .humidimage{
   position: relative;
   right: 40px;
+}
+@media only screen and(max-width: 1000px)
+{
+    .newsbox{
+        width: 10px;
+        padding-left: 20px;
+    }
 }
