@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import weatherapi from '../api/weatherApi'
 import Weatherdetailbox from './Weatherdetailbox'
+import WeatherDetails from './WeatherDetails';
 
 const Weather = ()=> {
     const [city, setcity] = useState();
@@ -42,7 +43,8 @@ const Weather = ()=> {
             </form>
             {
                 weather.data !== undefined ?
-                <p>{weather.data.main.temp}</p>
+                <WeatherDetails cityname={weather.data.name} countryname={weather.data.sys.country} temp1={weather.data.main.temp} 
+                min={weather.data.main.temp_max} max={weather.data.main.temp_min} outside={weather.data.weather[0].main}/>
                 :null
             }
             {

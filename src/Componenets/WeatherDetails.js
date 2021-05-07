@@ -1,16 +1,16 @@
 import React from 'react'
 
-function WeatherDetails() {
+function WeatherDetails(props) {
     return (
         <>
-           <h1>Ludhiana</h1> 
-           <p>5/5/2021</p>
-           <h3>Coudy</h3>
-            <h1>36</h1>
-            <p>c</p>
+           <h1>{props.cityname}</h1> 
+           <p>{props.countryname}</p>
+           <h3>{props.outside}</h3>
+            <h1>{props.temp1}</h1>
+            <p>K</p>
             <div>
-                <p>min</p>
-                <p>max</p>
+                <p>{props.min}K</p>
+                <p>{props.max}K</p>
             </div>
         </>
     )
