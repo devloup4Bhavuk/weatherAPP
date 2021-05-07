@@ -93,3 +93,7 @@ hr{
     padding-left: 20px;
     padding-top: 10px;
 }
+.humidimage{
+  position: relative;
+  right: 40px;
+}

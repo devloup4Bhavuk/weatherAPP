@@ -9,7 +9,7 @@ function Weatherdetailbox(props){
                     Pressure
                     </td>
                 <td className="humid">
-                <img src="https://img.icons8.com/android/24/000000/humidity.png"/>
+                <img className="humidimage" src="https://img.icons8.com/android/24/000000/humidity.png"/>
                  Humidity
                  </td>
             </tr>
