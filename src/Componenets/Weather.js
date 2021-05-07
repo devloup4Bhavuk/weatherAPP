@@ -42,16 +42,32 @@ const Weather = ()=> {
                 <button onClick={weatherData} >Submit</button>
             </form>
             {
+                
                 weather.data !== undefined ?
-                <WeatherDetails cityname={weather.data.name} countryname={weather.data.sys.country} temp1={weather.data.main.temp} 
-                min={weather.data.main.temp_max} max={weather.data.main.temp_min} outside={weather.data.weather[0].main}/>
+                <>
+
+                <WeatherDetails  
+                 cityname={weather.data.name} 
+                 countryname={weather.data.sys.country} 
+                 outside={weather.data.weather[0].main}
+                 temp1={weather.data.main.temp} 
+                 min={weather.data.main.temp_max} 
+                 max={weather.data.main.temp_min} 
+ 
+                />
+
+                <Weatherdetailbox 
+                 pressure={weather.data.main.pressure} 
+                 humidity ={weather.data.main.humidity} 
+                 visibility={weather.data.visibility} 
+                 speed={weather.data.wind.speed}
+
+                />
+                
+                </>
                 :null
             }
-            {
-                weather.data !== undefined ?
-                <Weatherdetailbox pressure={weather.data.main.pressure} />
-                :null
-            }
+            
         </>
     )
 }

@@ -1,43 +1,20 @@
-import React,{useState,useEffect} from 'react'
+import React from 'react'
 import Weather from './Componenets/Weather'
-import newsApi from './api/newsApi'
-import NewsBox from './Componenets/NewsBox'
+import News from './Componenets/News';
+
+
+
 const App = () => {
-    const[news,setNews] = useState([])
+    return(
+        <>
 
-    const newsData = async (e)=>{
-        var url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${newsApi}`;
-        const data = await fetch(url)
-            .then((promise) => promise.json())
-            .then( (response) => response);
-
-         setNews( {
-             data:data
-         });
-        
-    }
-
-    useEffect( ()=> { 
-        newsData();
-    },[]);
-
-    
-	return (
-	<>
         <Weather />
+        <News />
         
-        {
-            news.data !== undefined ?
-            console.log(news.data.articles)
-            :null
-        }
-        {
-            news.data !== undefined ?
-            <NewsBox news={news.data.articles}/>
-            :null 
-        }
-	</>
-	);
+        </>
+   
+    );
+   
 }
 
 export default App;

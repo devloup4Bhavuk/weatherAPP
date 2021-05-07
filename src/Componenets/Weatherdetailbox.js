@@ -6,19 +6,19 @@ function Weatherdetailbox(props){
         <table> 
             <tr >
                 <td ><p>Pressure</p></td>
-                <td><p>Pressure</p></td>
+                <td>Humidity</td>
             </tr>
             <tr >
                 <td >{props.pressure}</td>
-                <td >100</td>
+                <td >{props.humidity}</td>
             </tr>
-            <tr style={{padding:"5px"}} >
-                <td ><p>Pressure</p></td>
-                <td ><p>Pressure</p></td>
+            <tr>
+                <td >Visibility</td>
+                <td >Wind Speed</td>
             </tr>
             <tr >
-                <td >100</td>
-                <td >100</td>
+                <td >{props.visibility}</td>
+                <td >{props.speed}</td>
             </tr>
             
         </table>

@@ -6,7 +6,6 @@ function NewsBox(props) {
             <div>
               <h1>Top stories</h1>
               <hr></hr>
-              {console.log('news.js',props.news)}
               {props.news.map((newsItem)=>{
                   return <NewsHead title={newsItem.title} />
               })}
