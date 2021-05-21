@@ -38,7 +38,7 @@ const Weather = ()=> {
                 <input 
                 type="text"
                 onChange={input}
-                name="city" class="form-control" autoComplete="off" placeholder="Type Your City Name"
+                name="city" class="form-control" autoComplete="off" placeholder="Type Your City Name 🔎"
                 className="inp1 col-sm-12"
                 />
                 {/* <button onClick={weatherData} >Submit</button> */}
@@ -55,7 +55,7 @@ const Weather = ()=> {
                  temp1={weather.data.main.temp} 
                  min={weather.data.main.temp_max} 
                  max={weather.data.main.temp_min} 
- 
+                 icon={weather.data.weather[0].icon}
                 />
 
                 <Weatherdetailbox 
