@@ -5,7 +5,7 @@ function WeatherDetails(props) {
         return (
             props.cod === '200'?
             <>
-               <h1 className="head1">{props.cityname}</h1> 
+               <h1 className="head1">&nbsp;{props.cityname}</h1> 
                <h2 className="head2">
                {`${props.countryname}.   ${new Date().toDateString()}`}
                </h2>
