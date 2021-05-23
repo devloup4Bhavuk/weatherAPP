@@ -10,9 +10,11 @@ function NewsBox(props) {
                 <span>📰</span>
               </div>
               <hr></hr>
-              {props.news.map((newsItem)=>{
-                  return <NewsHead title={newsItem.title} />
-              })}
+              <div className="newsDiv">
+                {props.news.map((newsItem)=>{
+                    return <NewsHead title={newsItem.title} url={newsItem.url} />
+                })}
+              </div>
             </div>
         </>
     )

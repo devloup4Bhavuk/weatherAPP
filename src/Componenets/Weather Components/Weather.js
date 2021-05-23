@@ -17,7 +17,7 @@ const Weather = ()=> {
 
     const weatherData = async (e)=>{
         e.preventDefault();
-        if(city === ' '){
+        if(city === ''){
             alert('fill city name first');
         }
         else{
@@ -25,16 +25,20 @@ const Weather = ()=> {
                 const data = await fetch(url)
                             .then((response) => response.json())
                             .then( data=> data);
-
-                setweather({
-                    data:data
-                });
+                if(data.cod === 404){
+                    alert('Enter Correct City Name')
+                }
+                else{
+                    setweather({
+                        data:data
+                    });
+                }
         }
     }
 
     return (
-        <div class="col-md-6">
-            <form onSubmit={weatherData}>
+        <div class="col-md-6 weather">
+            <form className="form" onSubmit={weatherData}>
                 <input 
                 type="text"
                 onChange={input}
@@ -43,6 +47,7 @@ const Weather = ()=> {
                 />
                 {/* <button onClick={weatherData} >Submit</button> */}
             </form>
+            <br></br>
             {
                 
                 weather.data !== undefined ?
@@ -56,6 +61,7 @@ const Weather = ()=> {
                  min={weather.data.main.temp_max} 
                  max={weather.data.main.temp_min} 
                  icon={weather.data.weather[0].icon}
+                 cod="200"
                 />
 
                 <Weatherdetailbox 
@@ -67,7 +73,14 @@ const Weather = ()=> {
                 />
                 
                 </>
-                :null
+                :<>
+
+                <WeatherDetails  
+                  cod="404"
+                />
+
+                
+                </>
             }
             
         </div>

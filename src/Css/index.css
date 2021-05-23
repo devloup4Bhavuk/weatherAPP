@@ -3,21 +3,27 @@
 
 
 body{
+    height: 100vh;
+    width: 100%;
     /* background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);  linear-gradient(rgba(112, 109, 109, 0.4), rgba(229, 229, 229, 0.4)), */
      
    /* background: linear-gradient(to right, #19547b, #e9cfa5);  */
    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./wolfgang-hasselmann-bR_-gllg7Bs-unsplash.jpg');
 
     background-position: center center;
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-size: cover;
     
 }
-
+#root{
+    position: relative;
+}
 /* weather */
+.form{
+    padding: 0px 40px;
+}
 .inp1{
     margin: 40px;
-    width: 80%;
     font-size: 25px;
     border-radius: 20px;
     border: none
@@ -39,14 +45,18 @@ input[type="text"]:focus{
     text-align: center;
 }
 input:hover{
-    transform: scale(1.05);
+    transform: scale(1.01);
     
 }
 
 /* WEATHER DETAILS  */
+.weather{
+    height: 100vh;
+}
+
 .head1{
     font-style: normal;
-    font-size: 70px;
+    font-size: 3em;
     color: #FFFFFF;
     padding-left: 80px;
 }
@@ -105,7 +115,7 @@ tr,td{
 .humidimage{
     position: relative;
     right: 40px;
-  }
+}
   
 .k{
     /* padding-left: 5px; */
@@ -116,28 +126,35 @@ tr,td{
 
 
 /* News */
+.news{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
 .newsbox{
     background-color:#faf3f3;
     border-radius: 10px;
     padding-inline: 10px;
-    width: 50%;
-    margin: 100px;
-    height: 500px;
-    overflow-y: scroll; 
-    width: fit-content;
     box-shadow: 5px 5px 25px -5px rgb(42, 42, 43);
-    
+    position: relative;
+    margin: 0 50px;
+    width: fit-content;
 }
-.newsbox::-webkit-scrollbar {
+.newsDiv::-webkit-scrollbar {
     display: none;
 }
 .newsbox:hover{
     transform: scale(1.01);
 }
-
+.newsDiv{
+    height: 50vh;
+    overflow-y: scroll;
+}
 hr{
     border:solid black;
-    background-color: black;
+    background-color: #000000;
 }
 .newshead1{
     display: flex;
@@ -153,10 +170,12 @@ hr{
 }
 .news_title{
     width:fit-content;
-    font-size:3rem;
+    font-size:2em;
     font-family: 'Itim', cursive;
-    font-weight: bold;
     background-color:rgb(221, 225, 231);
     margin:25px;
     padding:32px;
+}
+.news_title a:hover{
+    text-decoration: none;
 }

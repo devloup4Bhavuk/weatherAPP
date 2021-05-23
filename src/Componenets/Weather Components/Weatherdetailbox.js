@@ -5,11 +5,11 @@ function Weatherdetailbox(props){
         <div>
         <table className="tab">
             <tr >
-                <td ><img src="https://img.icons8.com/android/24/000000/pressure.png"/>
+                <td ><img src="https://img.icons8.com/android/24/000000/pressure.png" alt=""/>
                     Pressure
                     </td>
                 <td className="humid">
-                <img className="humidimage" src="https://img.icons8.com/android/24/000000/humidity.png"/>
+                <img className="humidimage" src="https://img.icons8.com/android/24/000000/humidity.png" alt=""/>
                  Humidity
                  </td>
             </tr>
@@ -19,11 +19,11 @@ function Weatherdetailbox(props){
             </tr>
             <tr>
             <td >
-            <img src="https://img.icons8.com/emoji/48/000000/eye-emoji.png"/>
+            <img src="https://img.icons8.com/emoji/48/000000/eye-emoji.png" alt=""/>
                   Visibility
             </td>
                 <td className="humid">
-                <img src="https://img.icons8.com/ios/50/000000/wind-speed-less-1.png"/>
+                <img src="https://img.icons8.com/ios/50/000000/wind-speed-less-1.png" alt=""/>
                     Wind Speed
                      </td>
             </tr>

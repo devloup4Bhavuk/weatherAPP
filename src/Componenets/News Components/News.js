@@ -20,11 +20,11 @@ const  News = () => {
 
     useEffect( ()=> { 
         newsData();
-    },[20]);
+    },[]);
 
     
 	return (
-	<div className="news" class="col-md-6">
+	<div className="news" class="col-md-6 news">
         {
             news.data !== undefined ?
             <NewsBox news={news.data.articles}/>
