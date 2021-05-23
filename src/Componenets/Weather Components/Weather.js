@@ -6,7 +6,9 @@ import '../../Css/index.css'
 
 const Weather = ()=> {
     const [city, setcity] = useState();
-    const [weather, setweather] = useState([]);
+    const [weather, setweather] = useState({
+        cod:404
+    });
 
     const input = (e)=>{
         let name = e.target.name;
@@ -27,10 +29,14 @@ const Weather = ()=> {
                             .then( data=> data);
                 if(data.cod === 404){
                     alert('Enter Correct City Name')
+                    setweather({
+                        cod:data.cod
+                    })
                 }
                 else{
                     setweather({
-                        data:data
+                        data:data,
+                        cod:data.cod
                     });
                 }
         }
@@ -50,37 +56,38 @@ const Weather = ()=> {
             <br></br>
             {
                 
-                weather.data !== undefined ?
-                <>
+                    weather.cod === 200 ?
+                    <>
 
-                <WeatherDetails  
-                 cityname={weather.data.name} 
-                 countryname={weather.data.sys.country} 
-                 outside={weather.data.weather[0].main}
-                 temp1={weather.data.main.temp} 
-                 min={weather.data.main.temp_max} 
-                 max={weather.data.main.temp_min} 
-                 icon={weather.data.weather[0].icon}
-                 cod="200"
-                />
+                    <WeatherDetails  
+                    cityname={weather.data.name} 
+                    countryname={weather.data.sys.country} 
+                    outside={weather.data.weather[0].main}
+                    temp1={weather.data.main.temp} 
+                    min={weather.data.main.temp_max} 
+                    max={weather.data.main.temp_min} 
+                    icon={weather.data.weather[0].icon}
+                    cod="200"
+                    />
 
-                <Weatherdetailbox 
-                 pressure={weather.data.main.pressure} 
-                 humidity ={weather.data.main.humidity} 
-                 visibility={weather.data.visibility} 
-                 speed={weather.data.wind.speed}
+                    <Weatherdetailbox 
+                    pressure={weather.data.main.pressure} 
+                    humidity ={weather.data.main.humidity} 
+                    visibility={weather.data.visibility} 
+                    speed={weather.data.wind.speed}
 
-                />
+                    />
+                    
+                    </>
+                    :<>
+
+                    <WeatherDetails  
+                    cod="404"
+                    />
+
                 
                 </>
-                :<>
-
-                <WeatherDetails  
-                  cod="404"
-                />
-
                 
-                </>
             }
             
         </div>
