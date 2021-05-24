@@ -25,7 +25,7 @@ function WeatherDetails(props) {
                 <h2 className="head2">
                {`${new Date().toDateString()}`}
                </h2>
-               <h3 className="head3">No Weather Data Found</h3>
+               <h3 className="head3">RANDOM STRING</h3>
                 <h1 className="head4"><span>--</span>
                 </h1>
             </>
